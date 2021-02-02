@@ -1,0 +1,30 @@
+@import "title__banner";
+
+.fix-brands {
+  margin-top: 24px;
+
+  &__item {
+    background: #FFFFFF;
+    border: 1px solid $border-secondary-color;
+    border-radius: 6px;
+    width: 240px;
+    height: 30px;
+    padding: 20px 16px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item +  &__item {
+    margin-left: 16px;
+  }
+
+  &__item-box-btn.burger {
+    background: none;
+    padding: 0;
+
+
+  }
+
+}
