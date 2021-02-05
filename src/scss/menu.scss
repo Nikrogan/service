@@ -1,0 +1,12 @@
+.menu {
+  min-height: 88px;
+  background: #ffffff;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__box {
+    display: flex;
+  }
+}

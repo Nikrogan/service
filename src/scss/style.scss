@@ -1,10 +1,6 @@
+@import "utils/variables";
 @import "utils/base";
 @import "utils/fonts";
 @import "utils/normalize";
 
-@import "header";
-@import "service";
-@import "fix-brands";
-@import "fix-technics";
-@import "price";
-@import "footer";
+@import 'menu';
