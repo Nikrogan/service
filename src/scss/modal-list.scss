@@ -1,0 +1,56 @@
+
+@media screen and (min-width: 320px) {
+  .modal-list {
+    display: flex;
+
+    &_left-line {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        height: 32px;
+        width: 2px;
+        left: 0;
+        top: 4px;
+        border-radius: 1px;
+        background: $border-secondary-color;
+      }
+    }
+    &__item + &__item {
+      margin-left: 16px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1120px)  {
+  .modal-list {
+    &__item1 {
+      padding-left: 135px;
+      position: relative;
+      &:before {
+        content: 'Оставить заявку';
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+    }
+    &__item2 {
+      padding-left: 135px;
+      position: relative;
+      &:before {
+        content: "Статус ремонта";
+        position: absolute;
+        left: 0;
+        top: 8px;
+      }
+    }
+    &_left-line {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

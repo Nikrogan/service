@@ -3,4 +3,12 @@
 @import "utils/fonts";
 @import "utils/normalize";
 
+
+// Импорт блоков
+@import 'contacts-list';
+@import 'icon-btn';
+@import 'modal-list';
 @import 'menu';
+@import "btn-next";
+@import "service";
+

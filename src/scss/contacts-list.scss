@@ -1,0 +1,26 @@
+@media screen and (min-width: 320px) {
+.contacts-list {
+  &_disable {
+    display: none;
+  }
+}
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-list {
+    display: flex;
+
+    &__item + &__item {
+      margin-left: 16px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1120px) {
+  .contacts-list {
+    &_disable {
+      display: none;
+    }
+  }
+}
