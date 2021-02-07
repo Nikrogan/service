@@ -414,6 +414,8 @@ template {
       margin-left: 16px; } }
 
 @media screen and (min-width: 1120px) {
+  .modal-list__item {
+    cursor: pointer; }
   .modal-list__item1 {
     padding-left: 135px;
     position: relative; }
