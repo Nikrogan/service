@@ -27,6 +27,11 @@
 
 @media screen and (min-width: 1120px)  {
   .modal-list {
+
+    &__item {
+      cursor: pointer;
+    }
+
     &__item1 {
       padding-left: 135px;
       position: relative;
