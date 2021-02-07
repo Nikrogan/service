@@ -2,6 +2,7 @@
   .service {
     &__title {
       position: relative;
+      display: inline-block;
       margin-top: 24px;
       font-family: $font-bold;
       font-weight: 800;

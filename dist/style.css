@@ -556,6 +556,7 @@ template {
 @media screen and (min-width: 320px) {
   .service__title {
     position: relative;
+    display: inline-block;
     margin-top: 24px;
     font-family: "TT Lakes Bold", sans-serif;
     font-weight: 800;
