@@ -75,6 +75,16 @@ module.exports = {
       }
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/nav-menu.html',
+      filename: 'nav-menu.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+      }
+    }),
+
     // Кладем стили в отдельный файлик
     new MiniCssExtractPlugin({
       filename: 'style.css',
@@ -87,12 +97,5 @@ module.exports = {
         to: 'img',
       },
     ]),
-
-    new CopyWebpackPlugin([
-      {
-        from: './src/fonts',
-        to: 'fonts',
-      }
-    ])
   ],
 };

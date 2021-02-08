@@ -1,0 +1,37 @@
+.menu-logo {
+  display: flex;
+  align-items: center;
+  &__inner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 16px;
+  }
+  &__line {
+    width: 10px;
+    height: 2px;
+    background: #ffffff;
+    position: relative;
+    left: -4px;
+
+    &:before {
+      content: '';
+      width: 18px;
+      height: 2px;
+      background: #ffffff;
+      position: absolute;
+      left: 0;
+      top: -7px;
+    }
+
+    &:after {
+      content: '';
+      width: 14px;
+      height: 2px;
+      background: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 7px;
+    }
+  }
+}

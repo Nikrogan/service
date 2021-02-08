@@ -34,12 +34,14 @@
     color: $secondary-color;
     overflow-x: scroll;
     padding-bottom: 0;
+    -ms-overflow-style: none;
   }
 
   &__nav-list::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
+
 
   &__nav-link {
     display: inline-block;
