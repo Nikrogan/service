@@ -50,7 +50,10 @@ button {
 
 @media screen and (min-width: 1120px) {
   .container {
-    padding: 0 32px; } }
+    padding: 0 32px; }
+    .container_1120px {
+      max-width: 1184px;
+      margin: 0 auto; } }
 
 @font-face {
   font-family: 'TT Lakes Regular';
@@ -579,7 +582,12 @@ template {
     margin-top: 24px; }
   .service__nav-list {
     display: flex;
-    color: #7E7E82; }
+    color: #7E7E82;
+    overflow-x: scroll;
+    padding-bottom: 0; }
+  .service__nav-list::-webkit-scrollbar {
+    width: 0;
+    height: 0; }
   .service__nav-link {
     display: inline-block;
     padding: 8px 24px 8px 16px;
@@ -638,7 +646,11 @@ template {
       display: none; }
     .service__description_1120px {
       display: block;
-      max-width: 490px; } }
+      max-width: 490px; }
+    .service__box + .service__box {
+      margin: 0; }
+    .service__inner {
+      justify-content: space-between; } }
 
 
 /*# sourceMappingURL=style.css.map*/

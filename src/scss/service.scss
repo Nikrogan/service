@@ -32,6 +32,13 @@
     &__nav-list {
       display: flex;
       color: $secondary-color;
+      overflow-x: scroll;
+      padding-bottom: 0;
+    }
+
+    &__nav-list::-webkit-scrollbar {
+      width: 0;
+      height: 0;
     }
 
     &__nav-link {
@@ -136,6 +143,12 @@
     &__description_1120px {
       display: block;
       max-width: 490px;
+    }
+    &__box + &__box {
+      margin: 0;
+    }
+    &__inner {
+      justify-content: space-between;
     }
   }
 }

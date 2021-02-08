@@ -59,5 +59,9 @@ button {
 @media screen and (min-width: 1120px){
   .container {
     padding: 0 32px;
+    &_1120px {
+      max-width: 1184px;
+      margin:0 auto;
+    }
   }
 }
