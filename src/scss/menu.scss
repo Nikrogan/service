@@ -44,6 +44,10 @@
 
 @media screen and (min-width: 1120px) {
 
+  .menu {
+    border-bottom: 0;
+  }
+
   .menu__box1 {
     display: none;
   }
