@@ -7,4 +7,11 @@
   background: $accent-color;
   border-radius: 50%;
   cursor: pointer;
+  & svg {
+    transition: transform 0.5s;
+  }
+
+  &:hover svg {
+    transform: scale(1.3);
+  }
 }
