@@ -4,7 +4,7 @@ import '../scss/block-nav-menu/style-nav.scss';
 
 if (window.innerWidth <= 767) {
   const swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1.3,
+    slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
     },
