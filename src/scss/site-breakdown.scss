@@ -1,0 +1,18 @@
+.site-breakdown {
+  background: linear-gradient(270deg, #F8F8F8 0%, #FFFFFF 98.61%);
+  height: 80px;
+  padding: 16px 0;
+  border-top: 1px solid $border-accent-color;
+  display: flex;
+  align-items: center;
+
+  &__title {
+    font-family: $font-regular;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $secondary-color;
+  }
+}
+

@@ -85,6 +85,16 @@ module.exports = {
       }
     }),
 
+    new HtmlWebpackPlugin({
+      template: './src/brand.html',
+      filename: 'brand.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: false,
+      }
+    }),
+
     // Кладем стили в отдельный файлик
     new MiniCssExtractPlugin({
       filename: 'style.css',
