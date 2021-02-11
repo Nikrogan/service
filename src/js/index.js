@@ -30,7 +30,7 @@ const isCheckWindow = () => {
   const widthWindow768 = window.matchMedia('(width:768px)').matches
   const widthWindow320 = window.matchMedia('(width:320px)').matches
   if (widthWindow320) {
-    arrEmpty.forEach((i) => {
+    arrEmpty.forEach(i => {
       i.style.display = 'block'
     })
   } else if (widthWindow768) {
@@ -38,7 +38,7 @@ const isCheckWindow = () => {
       i.style.display = 'none'
     })
   } else if (widthWindow1120) {
-    arrEmpty.forEach((i) => {
+    arrEmpty.forEach(i => {
       i.style.display = 'block'
     })
 
