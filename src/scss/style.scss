@@ -15,8 +15,65 @@
 @import "btn-next";
 @import "service";
 
-
-//Block Brand
-
 @import "brand/brand";
 @import "site-breakdown";
+@import "repair-list";
+@import "repair-technic";
+@import "price";
+@import "btn-order";
+@import "table-price";
+@import "footer";
+
+.site-breakdown__wrapper {
+  margin-top: 24px;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet  {
+  background: #DDDDDD;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #B5B6BC;
+  opacity: 1;
+}
+
+.nav__wrapper {
+  display: block;
+}
+
+.blur {
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.96;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
+  overflow: hidden;
+  position: fixed;
+}
+
+
+.blur--active {
+  display: block;
+}
+
+@media screen and (min-width: 678px){
+  .site-breakdown__wrapper {
+    margin-top: 32px;
+  }
+}
+
+@media screen  and (min-width: 1366px){
+  .content__wrapper {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

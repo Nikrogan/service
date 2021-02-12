@@ -1,0 +1,37 @@
+.repair-list {
+ &__link {
+   display: inline-block;
+   width: 260px;
+   height: 200px;
+   background: #ffffff;
+   border-radius: 6px;
+   padding: 16px;
+   position: relative;
+   box-sizing: border-box;
+ }
+  &__item {
+    display: block;
+    width: auto;
+    margin-right: 17px;
+    font-size: 14px;
+  }
+
+  &__wrapper {
+    position: static;
+    margin-top: 16px;
+  }
+
+  &__box {
+    display: block;
+  }
+
+  &__box + &__box {
+    margin-top: 16px;
+  }
+
+  &__btn {
+    position: absolute!important;
+    right: 16px;
+    bottom: 16px;
+  }
+}

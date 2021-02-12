@@ -5,7 +5,7 @@
     content: "";
     position: absolute;
     background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
-    right: 12px;
+    right: -4px;
     z-index: 2;
   }
 
@@ -33,26 +33,13 @@
   }
 
   &__pagination {
-  position: static;
-    margin-top: 4px;
-    & .swiper-pagination-bullet {
-      width: 12px;
-      height: 12px;
-    }
+    position: static;
+    margin-top: 16px;
   }
   &__all {
     display: none;
   }
 
-  .swiper-pagination-bullet  {
-    background: #DDDDDD;
-    opacity: 1;
-  }
-
-  .swiper-pagination-bullet-active {
-    background: #B5B6BC;
-    opacity: 1;
-  }
 }
 
 
@@ -73,7 +60,7 @@
    }
     &__card {
       flex-wrap: wrap;
-      gap: 1em 1.5em;
+      gap: 1em 0.5em;
     }
 
    &__all {
@@ -106,8 +93,15 @@
     }
 
     &__card {
-      gap: 1em 2em;
+      gap: 1em 0.5em;
     }
   }
 }
 
+@media screen and (min-width: 1439px) {
+  .brand {
+    &__card {
+      gap: 1em 1.5em;
+    }
+  }
+}

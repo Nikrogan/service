@@ -48,7 +48,13 @@ body {
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
+summary {
+  cursor: pointer;
+}
+
+
 
 @media screen and (min-width: 768px){
   .container {
@@ -59,9 +65,10 @@ button {
 @media screen and (min-width: 1120px){
   .container {
     padding: 0 32px;
-    &_1120px {
-      max-width: 1120px;
-      margin:0 auto;
+    &--1120 {
+      width: 1120px;
+      margin-right: 0;
+      margin-left: auto;
     }
   }
 }

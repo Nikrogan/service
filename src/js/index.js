@@ -13,14 +13,21 @@ if (window.innerWidth <= 767) {
   });
 }
 
-const arrEmpty = []
-const arrBrandCard = document.querySelectorAll('.brand__item').forEach((i) => {
-  arrEmpty.push(i)
+const arrEmptyBrand = []
+const arrEmptyTechnic = []
+const arrBrandCard = document.querySelectorAll('.brand__item').forEach(i => {
+  arrEmptyBrand.push(i)
+})
+const arrTechnicCard = document.querySelectorAll('.repair-technic__item').forEach(i => {
+  arrEmptyTechnic.push(i)
 })
 
-const arrLastThree = arrEmpty.slice(arrEmpty.length - 3)
-const arrLastFive = arrEmpty.slice(arrEmpty.length - 5)
+const arrLastBrandThree = arrEmptyBrand.slice(arrEmptyBrand.length - 3)
+const arrLastBrandFive = arrEmptyBrand.slice(arrEmptyBrand.length - 5)
 const btnAllOpen = document.querySelector('.brand__all')
+
+const arrLastTechnicSix = arrEmptyTechnic.slice(arrEmptyTechnic.length - 6)
+const arrLastTechnicFive = arrEmptyTechnic.slice(arrEmptyTechnic.length - 5)
 
 let btnAllOpens = true
 
@@ -30,19 +37,31 @@ const isCheckWindow = () => {
   const widthWindow768 = window.matchMedia('(width:768px)').matches
   const widthWindow320 = window.matchMedia('(width:320px)').matches
   if (widthWindow320) {
-    arrEmpty.forEach(i => {
+    arrEmptyBrand.forEach(i => {
       i.style.display = 'block'
     })
+    arrEmptyTechnic.forEach(i => {
+      i.style.display ='block'
+    })
+
   } else if (widthWindow768) {
-    arrLastFive.forEach(i => {
+    arrLastBrandFive.forEach(i => {
       i.style.display = 'none'
     })
+
+    arrLastTechnicSix.forEach(i => {
+      i.style.display ='none'
+    })
   } else if (widthWindow1120) {
-    arrEmpty.forEach(i => {
+    arrEmptyBrand.forEach(i => {
       i.style.display = 'block'
     })
 
-    arrLastThree.forEach(i => {
+    arrLastBrandThree.forEach(i => {
+      i.style.display = 'none'
+    })
+
+    arrLastTechnicFive.forEach(i => {
       i.style.display = 'none'
     })
   }
@@ -53,7 +72,7 @@ isCheckWindow()
 
 btnAllOpen.addEventListener('click', () => {
   if(btnAllOpens) {
-    arrEmpty.forEach((i) => {
+    arrEmptyBrand.forEach((i) => {
       i.style.display = 'block'
     })
     btnAllOpens = false
@@ -64,3 +83,34 @@ btnAllOpen.addEventListener('click', () => {
 })
 
 
+// MENU!
+
+
+const menu = document.querySelector('.nav-menu')
+const blur = document.querySelector('.blur')
+
+document.addEventListener('click', (event) => {
+  if(event.target.matches('.menu-logo__btn')) {
+    menu.classList.add('nav-menu--active')
+    blur.classList.add('blur--active')
+  }
+  if(event.target.matches('#menu-logo__btn--close')) {
+    menu.classList.remove('nav-menu--active')
+    blur.classList.remove('blur--active')
+  }
+})
+
+
+let btnAllRepairOpens = true
+const btnAllRepair = document.querySelector('.repair-technic__all')
+btnAllRepair.addEventListener('click', ()=> {
+  if(btnAllRepairOpens) {
+    arrEmptyTechnic.forEach(i => {
+      i.style.display ='block'
+    })
+    btnAllRepairOpens = false
+  } else  {
+    btnAllRepairOpens = true
+    isCheckWindow()
+  }
+})

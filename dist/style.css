@@ -42,7 +42,11 @@ body {
 
 button {
   background: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
+
+summary {
+  cursor: pointer; }
 
 @media screen and (min-width: 768px) {
   .container {
@@ -51,9 +55,10 @@ button {
 @media screen and (min-width: 1120px) {
   .container {
     padding: 0 32px; }
-    .container_1120px {
-      max-width: 1120px;
-      margin: 0 auto; } }
+    .container--1120 {
+      width: 1120px;
+      margin-right: 0;
+      margin-left: auto; } }
 
 @font-face {
   font-family: 'TT Lakes Regular';
@@ -468,23 +473,41 @@ template {
       position: absolute;
       left: 0;
       top: 7px; }
+  .menu-logo__btn--close {
+    z-index: 1; }
+  .menu-logo__btn--close {
+    position: relative; }
+    .menu-logo__btn--close:before {
+      content: url("data:image/svg+xml, %3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z' fill='white'/%3E%3C/svg%3E");
+      position: absolute;
+      top: 10px; }
+  .menu-logo__btn--open {
+    position: relative; }
+    .menu-logo__btn--open:before {
+      content: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM0 8C0 7.44772 0.447715 7 1 7H9C9.55228 7 10 7.44772 10 8C10 8.55229 9.55229 9 9 9H1C0.447715 9 0 8.55229 0 8ZM1 14C0.447715 14 0 14.4477 0 15C0 15.5523 0.447716 16 1 16H13C13.5523 16 14 15.5523 14 15C14 14.4477 13.5523 14 13 14H1Z' fill='white'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      top: 12px; }
+
+@media screen and (min-width: 769px) {
+  .menu-logo__btn {
+    display: none; } }
 
 .nav-menu {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: fixed;
   width: 320px;
   height: 100vh;
   padding: 18px 16px 32px;
-  background: #FFFFFF;
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
   -ms-overflow-style: none;
   overflow-y: scroll;
-  display: flex;
   flex-direction: column;
-  margin: 0 auto; }
+  z-index: 10;
+  display: none;
+  background: #ffffff; }
   .nav-menu__search-btn {
     margin-left: auto; }
+  .nav-menu__wrapper {
+    background: #ffffff; }
   .nav-menu .nav-list__wrapper {
     margin-top: 46px; }
   .nav-menu__footer {
@@ -534,6 +557,18 @@ template {
 @media screen and (max-width: 360px) {
   .nav-menu__footer {
     margin-top: 0; } }
+
+@media screen and (min-width: 1366px) {
+  .nav-menu {
+    display: flex;
+    position: static;
+    overflow: hidden;
+    box-shadow: none; } }
+
+.nav-menu--active {
+  display: block;
+  background: #ffffff;
+  position: fixed; }
 
 .nav-list__item + .nav-list__item {
   margin-top: 28px; }
@@ -782,7 +817,7 @@ template {
   content: "";
   position: absolute;
   background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
-  right: 12px;
+  right: -4px;
   z-index: 2; }
 
 .brand__wrapper {
@@ -807,21 +842,10 @@ template {
 
 .brand__pagination {
   position: static;
-  margin-top: 4px; }
-  .brand__pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px; }
+  margin-top: 16px; }
 
 .brand__all {
   display: none; }
-
-.brand .swiper-pagination-bullet {
-  background: #DDDDDD;
-  opacity: 1; }
-
-.brand .swiper-pagination-bullet-active {
-  background: #B5B6BC;
-  opacity: 1; }
 
 @media screen and (min-width: 768px) {
   .brand:before {
@@ -836,7 +860,7 @@ template {
       transform: scale(1.05); }
   .brand__card {
     flex-wrap: wrap;
-    gap: 1em 1.5em; }
+    gap: 1em 0.5em; }
   .brand__all {
     display: block;
     padding-left: 26px;
@@ -857,7 +881,11 @@ template {
   .brand__item + .brand__item {
     margin-left: 0px; }
   .brand__card {
-    gap: 1em 2em; } }
+    gap: 1em 0.5em; } }
+
+@media screen and (min-width: 1439px) {
+  .brand__card {
+    gap: 1em 1.5em; } }
 
 .site-breakdown {
   background: linear-gradient(to right, #F8F8F8 0%, #FFFFFF 62.61%);
@@ -873,6 +901,309 @@ template {
     font-weight: 400;
     text-transform: uppercase;
     color: #7E7E82; }
+
+.repair-list__link {
+  display: inline-block;
+  width: 260px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 16px;
+  position: relative;
+  box-sizing: border-box; }
+
+.repair-list__item {
+  display: block;
+  width: auto;
+  margin-right: 17px;
+  font-size: 14px; }
+
+.repair-list__wrapper {
+  position: static;
+  margin-top: 16px; }
+
+.repair-list__box {
+  display: block; }
+
+.repair-list__box + .repair-list__box {
+  margin-top: 16px; }
+
+.repair-list__btn {
+  position: absolute !important;
+  right: 16px;
+  bottom: 16px; }
+
+.repair-technic__inner {
+  margin-top: 16px; }
+
+.repair-technic__item {
+  width: 240px;
+  height: 160px;
+  margin-right: 16px; }
+
+.repair-technic__link {
+  width: 240px;
+  height: 160px;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box; }
+  .repair-technic__link:before {
+    content: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='38' height='38' rx='19' stroke='%23FF3E79' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M21.5 20L17.7071 16.2071C17.3166 15.8166 17.3166 15.1834 17.7071 14.7929L17.7929 14.7071C18.1834 14.3166 18.8166 14.3166 19.2071 14.7071L23.7929 19.2929C24.1834 19.6834 24.1834 20.3166 23.7929 20.7071L19.2071 25.2929C18.8166 25.6834 18.1834 25.6834 17.7929 25.2929L17.7071 25.2071C17.3166 24.8166 17.3166 24.1834 17.7071 23.7929L21.5 20Z' fill='%23FF3E79'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    bottom: 16px;
+    right: 16px; }
+
+.repair-technic__text {
+  font-family: "TT Lakes Medium", sans-serif;
+  font-weight: 500;
+  line-height: 24px; }
+
+.repair-technic__pagination {
+  position: static;
+  margin-top: 16px; }
+
+.repair-technic__all {
+  display: none; }
+
+@media screen and (min-width: 768px) {
+  .repair-technic__item {
+    width: 224px;
+    margin-right: 0;
+    transition: all 0.3s; }
+    .repair-technic__item:hover {
+      transform: scale(1.1); }
+  .repair-technic__link {
+    width: 224px; }
+  .repair-technic__inner {
+    overflow: visible; }
+  .repair-technic__card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em; }
+  .repair-technic__all {
+    display: block;
+    padding-left: 26px;
+    position: relative;
+    font-family: "TT Lakes Medium", sans-serif;
+    font-weight: 500;
+    margin-top: 24px; }
+    .repair-technic__all:before {
+      content: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.50008 0.500076L4.00008 3.00008L1.50008 0.500076C1.22393 0.223933 0.776218 0.223933 0.500076 0.500076C0.223933 0.776218 0.223933 1.22393 0.500075 1.50008L3.29297 4.29297C3.68349 4.68349 4.31666 4.68349 4.70718 4.29297L7.50008 1.50008C7.77622 1.22393 7.77622 0.776218 7.50008 0.500076C7.22393 0.223933 6.77622 0.223933 6.50008 0.500076ZM6.50008 6.50008L4.00008 9.00008L1.50008 6.50008C1.22393 6.22393 0.776218 6.22393 0.500076 6.50008C0.223933 6.77622 0.223933 7.22393 0.500075 7.50008L3.29297 10.293C3.68349 10.6835 4.31666 10.6835 4.70718 10.293L7.50008 7.50008C7.77622 7.22393 7.77622 6.77622 7.50008 6.50008C7.22393 6.22393 6.77622 6.22393 6.50008 6.50008Z' fill='%2341F6D7'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      left: 0; } }
+
+@media screen and (min-width: 1439px) {
+  .repair-technic__item {
+    width: 240px; }
+  .repair-technic__link {
+    width: 240px; }
+  .repair-technic__card {
+    gap: 1.5em; } }
+
+.price__content {
+  margin-top: 16px; }
+
+.price--color--title {
+  mix-blend-mode: normal;
+  opacity: 0.72;
+  line-height: 16px;
+  color: #7E7E82;
+  font-family: "TT Lakes Medium", sans-serif;
+  font-weight: 500; }
+
+.price--color--text {
+  font-size: 14px;
+  line-height: 18px; }
+
+.price__text {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  max-width: 420px;
+  margin-top: 32px; }
+
+.price__link {
+  font-family: "TT Lakes Medium", sans-serif;
+  font-weight: 500;
+  position: relative;
+  padding-right: 24px;
+  margin-top: 16px;
+  display: inline-block; }
+  .price__link:before {
+    content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.29401 15.2359C8.90847 15.6255 8.90847 16.2529 9.29401 16.6426L9.34047 16.6895C9.73184 17.0851 10.3708 17.0851 10.7622 16.6895L14.7062 12.7034C15.0917 12.3138 15.0917 11.6864 14.7062 11.2967L10.7622 7.3106C10.3708 6.91506 9.73184 6.91506 9.34047 7.3106L9.29401 7.35757C8.90847 7.74722 8.90847 8.37461 9.29401 8.76425L12.4956 12.0001L9.29401 15.2359Z' fill='%23FF3E79'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    right: 161px;
+    top: 24px; }
+
+@media screen and (min-width: 768px) {
+  .price__content--768px {
+    display: none; }
+  .price__link {
+    font-family: "TT Lakes Medium", sans-serif;
+    font-weight: 500;
+    position: relative;
+    padding-right: 24px;
+    margin-top: 16px;
+    display: inline-block; }
+    .price__link:before {
+      content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.29401 15.2359C8.90847 15.6255 8.90847 16.2529 9.29401 16.6426L9.34047 16.6895C9.73184 17.0851 10.3708 17.0851 10.7622 16.6895L14.7062 12.7034C15.0917 12.3138 15.0917 11.6864 14.7062 11.2967L10.7622 7.3106C10.3708 6.91506 9.73184 6.91506 9.34047 7.3106L9.29401 7.35757C8.90847 7.74722 8.90847 8.37461 9.29401 8.76425L12.4956 12.0001L9.29401 15.2359Z' fill='%23FF3E79'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      right: 0;
+      top: 0; } }
+
+.btn-order {
+  background: #FF3E79;
+  font-family: "TT Lakes Bold", sans-serif;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: -0.15px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 4px 40px 4px 12px;
+  border-radius: 16px;
+  position: relative; }
+  .btn-order:before {
+    content: url("data:image/svg+xml,%3Csvg width='7' height='10' viewBox='0 0 7 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.8 4.99994L0.791554 2.229C0.3641 1.83529 0.361125 1.16138 0.785088 0.763917L0.920293 0.637162C1.30321 0.278177 1.89851 0.276333 2.28364 0.632939L6.93812 4.94264C6.9715 4.97355 6.9715 5.02633 6.93812 5.05723L2.34674 9.30851C1.92606 9.69803 1.27582 9.69601 0.857554 9.30389C0.394457 8.86974 0.397706 8.13363 0.864616 7.70358L3.8 4.99994Z' fill='white'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    right: 16px;
+    top: 4.6px; }
+
+.table-price {
+  width: 100%;
+  margin-top: 31px;
+  border-spacing: 0;
+  border-collapse: collapse; }
+  .table-price__head {
+    text-align: left; }
+  .table-price__btn--width {
+    width: 100px; }
+  .table-price th {
+    padding: 16px 24px; }
+  .table-price td {
+    height: 35px;
+    padding: 16px 24px;
+    background: #ffffff; }
+  .table-price td + td {
+    padding-left: 0; }
+  .table-price__td--radius--left--bottom {
+    border-bottom-left-radius: 6px; }
+  .table-price__td--radius--right--bottom {
+    border-bottom-right-radius: 6px; }
+  .table-price__td--radius--right--top {
+    border-top-right-radius: 6px; }
+  .table-price__td--radius--left--top {
+    border-top-left-radius: 6px; }
+  .table-price__wrapper {
+    position: relative; }
+  .table-price__border:before {
+    content: '';
+    width: 1008px;
+    border-top: 1px solid #EAEAEA;
+    height: 1px;
+    position: absolute;
+    left: 54px; }
+
+@media screen and (max-width: 1120px) {
+  .table-price__border:before {
+    content: '';
+    width: 668px;
+    border-top: 1px solid #EAEAEA;
+    height: 1px;
+    position: absolute;
+    left: 47px; } }
+
+@media screen and (max-width: 767px) {
+  .table-price {
+    display: none; } }
+
+.footer {
+  margin-top: 50px;
+  padding: 32px 0 21px;
+  border-top: 1px solid #D9FFF5; }
+  .footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: "TT Lakes Medium", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #7E7E82;
+    mix-blend-mode: normal;
+    opacity: 0.72;
+    text-align: center; }
+  .footer__copyright {
+    display: inline-block;
+    align-items: center; }
+  .footer__politcle {
+    display: inline-block;
+    margin-top: 16px;
+    align-items: center; }
+  .footer__info {
+    display: inline-block;
+    margin-top: 16px;
+    align-items: center; }
+
+@media screen and (min-width: 768px) {
+  .footer__wrapper {
+    flex-direction: row; }
+  .footer__politcle {
+    margin-top: 0;
+    text-align: center; }
+  .footer__copyright {
+    margin-top: 0;
+    text-align: left;
+    width: 231px; }
+  .footer__info {
+    margin-top: 0;
+    text-align: right;
+    max-width: 317px; } }
+
+.site-breakdown__wrapper {
+  margin-top: 24px; }
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px; }
+
+.swiper-pagination-bullet {
+  background: #DDDDDD;
+  opacity: 1; }
+
+.swiper-pagination-bullet-active {
+  background: #B5B6BC;
+  opacity: 1; }
+
+.nav__wrapper {
+  display: block; }
+
+.blur {
+  background: #FFFFFF;
+  mix-blend-mode: normal;
+  opacity: 0.96;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
+  overflow: hidden;
+  position: fixed; }
+
+.blur--active {
+  display: block; }
+
+@media screen and (min-width: 678px) {
+  .site-breakdown__wrapper {
+    margin-top: 32px; } }
+
+@media screen and (min-width: 1366px) {
+  .content__wrapper {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto; } }
 
 html {
   box-sizing: border-box; }
@@ -917,7 +1248,11 @@ body {
 
 button {
   background: none;
-  border: none; }
+  border: none;
+  cursor: pointer; }
+
+summary {
+  cursor: pointer; }
 
 @media screen and (min-width: 768px) {
   .container {
@@ -926,26 +1261,27 @@ button {
 @media screen and (min-width: 1120px) {
   .container {
     padding: 0 32px; }
-    .container_1120px {
-      max-width: 1120px;
-      margin: 0 auto; } }
+    .container--1120 {
+      width: 1120px;
+      margin-right: 0;
+      margin-left: auto; } }
 
 .nav-menu {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: fixed;
   width: 320px;
   height: 100vh;
   padding: 18px 16px 32px;
-  background: #FFFFFF;
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02), 16px 0px 52px rgba(14, 24, 80, 0.2);
   -ms-overflow-style: none;
   overflow-y: scroll;
-  display: flex;
   flex-direction: column;
-  margin: 0 auto; }
+  z-index: 10;
+  display: none;
+  background: #ffffff; }
   .nav-menu__search-btn {
     margin-left: auto; }
+  .nav-menu__wrapper {
+    background: #ffffff; }
   .nav-menu .nav-list__wrapper {
     margin-top: 46px; }
   .nav-menu__footer {
@@ -996,6 +1332,18 @@ button {
   .nav-menu__footer {
     margin-top: 0; } }
 
+@media screen and (min-width: 1366px) {
+  .nav-menu {
+    display: flex;
+    position: static;
+    overflow: hidden;
+    box-shadow: none; } }
+
+.nav-menu--active {
+  display: block;
+  background: #ffffff;
+  position: fixed; }
+
 .menu-logo {
   display: flex;
   align-items: center; }
@@ -1026,6 +1374,24 @@ button {
       position: absolute;
       left: 0;
       top: 7px; }
+  .menu-logo__btn--close {
+    z-index: 1; }
+  .menu-logo__btn--close {
+    position: relative; }
+    .menu-logo__btn--close:before {
+      content: url("data:image/svg+xml, %3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.79348 1.25712C2.40295 0.866593 1.76979 0.866592 1.37927 1.25712L1.25712 1.37927C0.866592 1.76979 0.866593 2.40296 1.25712 2.79348L7.46364 9L1.25712 15.2065C0.866593 15.597 0.866592 16.2302 1.25712 16.6207L1.37927 16.7429C1.76979 17.1334 2.40295 17.1334 2.79348 16.7429L9 10.5364L15.2065 16.7429C15.597 17.1334 16.2302 17.1334 16.6207 16.7429L16.7429 16.6207C17.1334 16.2302 17.1334 15.597 16.7429 15.2065L10.5364 9L16.7429 2.79348C17.1334 2.40296 17.1334 1.76979 16.7429 1.37927L16.6207 1.25712C16.2302 0.866592 15.597 0.866593 15.2065 1.25712L9 7.46364L2.79348 1.25712Z' fill='white'/%3E%3C/svg%3E");
+      position: absolute;
+      top: 10px; }
+  .menu-logo__btn--open {
+    position: relative; }
+    .menu-logo__btn--open:before {
+      content: url("data:image/svg+xml,%3Csvg width='18' height='16' viewBox='0 0 18 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 1C0 0.447715 0.447715 0 1 0H17C17.5523 0 18 0.447715 18 1C18 1.55228 17.5523 2 17 2H1C0.447716 2 0 1.55228 0 1ZM0 8C0 7.44772 0.447715 7 1 7H9C9.55228 7 10 7.44772 10 8C10 8.55229 9.55229 9 9 9H1C0.447715 9 0 8.55229 0 8ZM1 14C0.447715 14 0 14.4477 0 15C0 15.5523 0.447716 16 1 16H13C13.5523 16 14 15.5523 14 15C14 14.4477 13.5523 14 13 14H1Z' fill='white'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      top: 12px; }
+
+@media screen and (min-width: 769px) {
+  .menu-logo__btn {
+    display: none; } }
 
 .nav-list__item + .nav-list__item {
   margin-top: 28px; }

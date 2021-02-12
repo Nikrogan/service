@@ -1,0 +1,64 @@
+.price {
+  &__content {
+    margin-top: 16px;
+  }
+
+  &--color--title {
+    mix-blend-mode: normal;
+    opacity: 0.72;
+    line-height: 16px;
+    color: $secondary-color;
+    font-family: $font-medium;
+    font-weight: 500;
+  }
+
+  &--color--text {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    max-width: 420px;
+    margin-top: 32px;
+  }
+
+  &__link {
+    font-family: $font-medium;
+    font-weight: 500;
+    position: relative;
+    padding-right: 24px;
+    margin-top: 16px;
+    display: inline-block;
+    &:before {
+      content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.29401 15.2359C8.90847 15.6255 8.90847 16.2529 9.29401 16.6426L9.34047 16.6895C9.73184 17.0851 10.3708 17.0851 10.7622 16.6895L14.7062 12.7034C15.0917 12.3138 15.0917 11.6864 14.7062 11.2967L10.7622 7.3106C10.3708 6.91506 9.73184 6.91506 9.34047 7.3106L9.29401 7.35757C8.90847 7.74722 8.90847 8.37461 9.29401 8.76425L12.4956 12.0001L9.29401 15.2359Z' fill='%23FF3E79'/%3E%3C/svg%3E%0A");
+      position: absolute;
+      right: 161px;
+      top: 24px;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px){
+  .price {
+   &__content--768px {
+     display: none;
+   }
+    &__link {
+      font-family: $font-medium;
+      font-weight: 500;
+      position: relative;
+      padding-right: 24px;
+      margin-top: 16px;
+      display: inline-block;
+      &:before {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.29401 15.2359C8.90847 15.6255 8.90847 16.2529 9.29401 16.6426L9.34047 16.6895C9.73184 17.0851 10.3708 17.0851 10.7622 16.6895L14.7062 12.7034C15.0917 12.3138 15.0917 11.6864 14.7062 11.2967L10.7622 7.3106C10.3708 6.91506 9.73184 6.91506 9.34047 7.3106L9.29401 7.35757C8.90847 7.74722 8.90847 8.37461 9.29401 8.76425L12.4956 12.0001L9.29401 15.2359Z' fill='%23FF3E79'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
