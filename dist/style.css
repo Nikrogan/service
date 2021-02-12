@@ -742,8 +742,15 @@ template {
 
 .service__nav-link {
   display: inline-block;
-  padding: 8px 24px 8px 16px;
-  white-space: nowrap; }
+  padding: 8px 20px 8px 16px;
+  white-space: nowrap;
+  transition: all 0.4s;
+  position: relative;
+  border: 2px solid transparent; }
+  .service__nav-link:hover {
+    border: 2px solid #D9FFF5;
+    background: #ffffff;
+    border-radius: 6px; }
 
 .service__nav-link_active {
   border: 2px solid #D9FFF5;
