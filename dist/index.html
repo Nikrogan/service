@@ -60,26 +60,16 @@
       <div class="nav-menu__footer">
         <ul class="contacts-list">
           <li class="contacts-list__item">
-            <button class="contacts-list__btn icon-btn">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.76019 12.25L4.30019 11.96C4.91019 11.89 5.51019 12.1 5.94019 12.53L7.78019 14.37C10.6102 12.93 12.9302 10.62 14.3702 7.78L12.5202 5.93C12.0902 5.5 11.8802 4.9 11.9502 4.29L12.2402 1.77C12.3602 0.76 13.2102 0 14.2302 0H15.9602C17.0902 0 18.0302 0.94 17.9602 2.07C17.4302 10.61 10.6002 17.43 2.07019 17.96C0.940193 18.03 0.00019455 17.09 0.00019455 15.96V14.23C-0.00980568 13.22 0.750193 12.37 1.76019 12.25Z" fill="white"/>
-              </svg>
+            <button class="contacts-list__btn contacts-list__call">
+
             </button>
           </li>
           <li class="contacts-list__item">
-            <button class="contacts-list__btn icon-btn">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 15H18C19.1 15 20 14.1 20 13V2C20 0.9 19.1 0 18 0ZM11 11H5C4.45 11 4 10.55 4 10C4 9.45 4.45 9 5 9H11C11.55 9 12 9.45 12 10C12 10.55 11.55 11 11 11ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z" fill="white"/>
-                <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 15H18C19.1 15 20 14.1 20 13V2C20 0.9 19.1 0 18 0ZM11 11H5C4.45 11 4 10.55 4 10C4 9.45 4.45 9 5 9H11C11.55 9 12 9.45 12 10C12 10.55 11.55 11 11 11ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z" fill="white"/>
-                </mask>
-                <g mask="url(#mask0)">
-                </g>
-              </svg>
+            <button class="contacts-list__btn contacts-list__chat">
             </button>
           </li>
           <li class="contacts-list__item">
-            <button class="contacts-list__btn icon-btn">
+            <button class="contacts-list__btn contacts-list__profile">
               <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.5 9C12.9853 9 15 6.98528 15 4.5C15 2.01472 12.9853 0 10.5 0C8.01472 0 6 2.01472 6 4.5C6 6.98528 8.01472 9 10.5 9Z" fill="white"/>
                 <path d="M0.0165859 16.6118C-0.113065 17.3412 0.535191 18 1.33903 18H18.6604C19.4902 18 20.1125 17.3412 19.9829 16.6118C19.2309 12.4 15.0561 10 9.99973 10C4.94333 10 0.768563 12.4 0.0165859 16.6118Z" fill="white"/>
@@ -102,6 +92,24 @@
     </div>
   </div>
   <div class="container--1120">
+    <div class="modal-call">
+      <button class="modal-call__close">
+
+      </button>
+      <div class="container">
+        <form action="" method="get" class="modal-call__form">
+          <h1 class="modal-call__title">Заказать звонок</h1>
+          <input type="text" class="modal-call__input" placeholder="Телефон">
+          <p class="modal-call__text">
+            Нажимая “отправить”, вы даете согласие на <a href="#" class="modal-call__link">обработку персональных данных</a> и соглашаетесь с нашей
+            <a href="#" class="modal-call__link">политикой конфиденциальности</a>
+          </p>
+          <div class="modal-call__wrapper">
+            <button class="modal-call__btn btn-order">отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <main class="main">
       <div class="menu">
         <div class="container menu__wrapper">
@@ -116,14 +124,14 @@
             <div class="contacts-list__wrapper">
               <ul class="contacts-list contacts-list_disable">
                 <li class="contacts-list__item">
-                  <button class="contacts-list__btn icon-btn">
+                  <button class="contacts-list__btn contacts-list__call icon-btn">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M1.76019 12.25L4.30019 11.96C4.91019 11.89 5.51019 12.1 5.94019 12.53L7.78019 14.37C10.6102 12.93 12.9302 10.62 14.3702 7.78L12.5202 5.93C12.0902 5.5 11.8802 4.9 11.9502 4.29L12.2402 1.77C12.3602 0.76 13.2102 0 14.2302 0H15.9602C17.0902 0 18.0302 0.94 17.9602 2.07C17.4302 10.61 10.6002 17.43 2.07019 17.96C0.940193 18.03 0.00019455 17.09 0.00019455 15.96V14.23C-0.00980568 13.22 0.750193 12.37 1.76019 12.25Z" fill="white"/>
                     </svg>
                   </button>
                 </li>
                 <li class="contacts-list__item">
-                  <button class="contacts-list__btn icon-btn">
+                  <button class="contacts-list__btn contacts-list__chat icon-btn">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M18 0H2C0.9 0 0.01 0.9 0.01 2L0 20L4 15H18C19.1 15 20 14.1 20 13V2C20 0.9 19.1 0 18 0ZM11 11H5C4.45 11 4 10.55 4 10C4 9.45 4.45 9 5 9H11C11.55 9 12 9.45 12 10C12 10.55 11.55 11 11 11ZM15 6H5C4.45 6 4 5.55 4 5C4 4.45 4.45 4 5 4H15C15.55 4 16 4.45 16 5C16 5.55 15.55 6 15 6Z" fill="white"/>
                       <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="20">
@@ -135,7 +143,7 @@
                   </button>
                 </li>
                 <li class="contacts-list__item">
-                  <button class="contacts-list__btn icon-btn">
+                  <button class="contacts-list__btn contacts-list__profile icon-btn">
                     <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.5 9C12.9853 9 15 6.98528 15 4.5C15 2.01472 12.9853 0 10.5 0C8.01472 0 6 2.01472 6 4.5C6 6.98528 8.01472 9 10.5 9Z" fill="white"/>
                       <path d="M0.0165859 16.6118C-0.113065 17.3412 0.535191 18 1.33903 18H18.6604C19.4902 18 20.1125 17.3412 19.9829 16.6118C19.2309 12.4 15.0561 10 9.99973 10C4.94333 10 0.768563 12.4 0.0165859 16.6118Z" fill="white"/>
@@ -154,7 +162,7 @@
                   </svg>
                 </button>
               </li>
-              <li class="modal-list__item mod al-list__item2">
+              <li class="modal-list__item modal-list__item2">
                 <button class="modal-list__btn icon-btn modal-list__btn--search">
                   <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1C0 0.447715 0.447715 0 1 0H15C15.5523 0 16 0.447716 16 1V18.5C15.1716 18.5 14.5001 19.1715 14.5 19.9999H13.5C13.4999 19.1715 12.8284 18.5 12 18.5C11.1716 18.5 10.5001 19.1715 10.5 19.9999H9.5C9.49994 19.1715 8.82839 18.5 8 18.5C7.17161 18.5 6.50006 19.1715 6.5 19.9999H5.5C5.49994 19.1715 4.82839 18.5 4 18.5C3.17161 18.5 2.50006 19.1715 2.5 19.9999H1.5C1.49994 19.1715 0.828392 18.5 0 18.5V1ZM9.41635 11.7884C8.55361 12.3444 7.47039 12.5936 6.32965 12.3827C4.52748 12.0472 3.08957 10.5327 2.85951 8.71142C2.49524 5.82612 4.94926 3.42012 7.85383 3.88023C9.656 4.1678 11.1035 5.644 11.4007 7.43652C11.5828 8.54846 11.324 9.57413 10.7872 10.4273L12.8961 12.5265C13.2699 12.9004 13.2699 13.5138 12.8961 13.8877C12.5126 14.2711 11.8991 14.2711 11.5253 13.8973L9.41635 11.7884ZM4.70588 8.05882C4.70588 6.76 5.76 5.70588 7.05882 5.70588C8.35765 5.70588 9.41177 6.76 9.41177 8.05882C9.41177 9.35765 8.35765 10.4118 7.05882 10.4118C5.76 10.4118 4.70588 9.35765 4.70588 8.05882Z" fill="white"/>
@@ -615,8 +623,9 @@
       </div>
     </footer>
   </div>
-
 </div>
+
+
 <script src="./js/index.js"> </script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="./js/bundle.js"></script></body>

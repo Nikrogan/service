@@ -85,9 +85,9 @@ btnAllOpen.addEventListener('click', () => {
 
 // MENU!
 
-
 const menu = document.querySelector('.nav-menu')
 const blur = document.querySelector('.blur')
+const modalCall = document.querySelector('.modal-call')
 
 document.addEventListener('click', (event) => {
   if(event.target.matches('.menu-logo__btn')) {
@@ -98,8 +98,16 @@ document.addEventListener('click', (event) => {
     menu.classList.remove('nav-menu--active')
     blur.classList.remove('blur--active')
   }
-})
 
+  if(event.target.matches('.repair-list__btn') || event.target.matches('.table-price__btn') || event.target.matches('.contacts-list__call'))   {
+    modalCall.classList.add('modal-call--active')
+    blur.classList.add('blur--active')
+  }
+  if(event.target.matches('.modal-call__close')) {
+    modalCall.classList.remove('modal-call--active')
+    blur.classList.remove('blur--active')
+  }
+})
 
 let btnAllRepairOpens = true
 const btnAllRepair = document.querySelector('.repair-technic__all')
