@@ -1197,6 +1197,9 @@ template {
     margin-top: 24px; }
   .modal-call__link {
     color: #fa326c; }
+  .modal-call__input--height--118 {
+    min-height: 118px;
+    resize: none; }
 
 .modal-call--active {
   display: block; }

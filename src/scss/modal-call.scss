@@ -60,11 +60,17 @@
   &__link {
     color: $accent-color;
   }
+
+  &__input--height--118 {
+    min-height: 118px;
+    resize:none;
+  }
 }
 
 .modal-call--active {
   display: block;
 }
+
 
 
 @media screen and (max-width: 768px) {

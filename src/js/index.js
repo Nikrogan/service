@@ -88,6 +88,7 @@ btnAllOpen.addEventListener('click', () => {
 const menu = document.querySelector('.nav-menu')
 const blur = document.querySelector('.blur')
 const modalCall = document.querySelector('.modal-call')
+const modalFeedback = document.querySelector('.modal-feedback')
 
 document.addEventListener('click', (event) => {
   if(event.target.matches('.menu-logo__btn')) {
@@ -105,8 +106,15 @@ document.addEventListener('click', (event) => {
   }
   if(event.target.matches('.modal-call__close')) {
     modalCall.classList.remove('modal-call--active')
+    modalFeedback.classList.remove('modal-call--active')
     blur.classList.remove('blur--active')
   }
+
+  if(event.target.matches('.contacts-list__chat')) {
+    modalFeedback.classList.add('modal-call--active')
+    blur.classList.add('blur--active')
+  }
+
 })
 
 let btnAllRepairOpens = true
