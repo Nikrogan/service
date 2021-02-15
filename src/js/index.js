@@ -98,23 +98,29 @@ document.addEventListener('click', (event) => {
   if(event.target.matches('#menu-logo__btn--close')) {
     menu.classList.remove('nav-menu--active')
     blur.classList.remove('blur--active')
+    if(modalFeedback.classList.contains('.modal-call--active') || modalCall.classList.contains('modal-call--active')) {
+      blur.classList.add('blur--active')
+      menu.classList.remove('nav-menu--active')
+    }
   }
 
   if(event.target.matches('.repair-list__btn') || event.target.matches('.table-price__btn') || event.target.matches('.contacts-list__call'))   {
     modalCall.classList.add('modal-call--active')
     blur.classList.add('blur--active')
+    menu.classList.remove('nav-menu--active')
   }
-  if(event.target.matches('.modal-call__close')) {
+  if(event.target.matches('.modal-call__close') || event.target.matches('.blur')) {
     modalCall.classList.remove('modal-call--active')
     modalFeedback.classList.remove('modal-call--active')
     blur.classList.remove('blur--active')
+    menu.classList.remove('nav-menu--active')
   }
 
   if(event.target.matches('.contacts-list__chat')) {
     modalFeedback.classList.add('modal-call--active')
     blur.classList.add('blur--active')
+    menu.classList.remove('nav-menu--active')
   }
-
 })
 
 let btnAllRepairOpens = true

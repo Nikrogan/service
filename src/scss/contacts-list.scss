@@ -26,12 +26,21 @@
     transition: all 0.5s;
     width: 40px;
     height: 40px;
+
     &:hover {
       transform: scale(1.15);
     }
   }
 }
 
+
+@media screen and (min-width: 767px) {
+  .contacts-list {
+    &_disable {
+      display: flex;
+    }
+  }
+}
 
 @media screen and (min-width: 1120px) {
   .contacts-list {
