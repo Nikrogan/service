@@ -121,6 +121,17 @@ document.addEventListener('click', (event) => {
     blur.classList.add('blur--active')
     menu.classList.remove('nav-menu--active')
   }
+  if(event.target.closest('.nav-list__item')) {
+    let a = document.querySelectorAll('[data-key]')
+    const targetKey = event.target.closest('.nav-list__item').dataset.key
+    Array.from(a).map((i)=> {
+      if(i.dataset.key === targetKey) {
+        i.classList.add('nav-list__item--active')
+      } else {
+        i.classList.remove('nav-list__item--active')
+      }
+    })
+  }
 })
 
 let btnAllRepairOpens = true
